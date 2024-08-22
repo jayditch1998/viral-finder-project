@@ -30,6 +30,7 @@ const Login = () => {
   };
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [message, setSetMessage] = useState('');
   const navigate = useNavigate();
 
   const initialValues = {
@@ -55,14 +56,19 @@ const Login = () => {
         "http://localhost:4000/api/auth/login",
         values
       );
-      resetForm();
-      console.log("Registration success:", response.data);
+      localStorage.setItem("token", response.data.token);
+      // resetForm();
+      console.log("Login success:", response.data);
+      setSetMessage('Login Sucessfully!');
       setOpenSnackbar(true);
+      // navigate("/dashboard");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/dashboard");
       }, 2000);
     } catch (error) {
       if (error.response && error.response.data) {
+        setSetMessage('Invalid Credentials!');
+        setOpenSnackbar(true);
         setErrors({ email: error.response.data.message });
       }
     } finally {
@@ -152,7 +158,7 @@ const Login = () => {
           severity="success"
           sx={{ width: "100%" }}
         >
-          Registration successful! Redirecting to Login...
+          {message}
         </MuiAlert>
       </Snackbar>
     </Grid>
