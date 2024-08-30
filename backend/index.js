@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const apifyRoutes = require('./routes/apifyRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -22,6 +23,7 @@ app.get('/', (request, response) => {
 
 app.use('/api/viral-content', viralContentRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/instagram', apifyRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
