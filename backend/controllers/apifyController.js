@@ -14,14 +14,12 @@ exports.processApifyAPI = async (req, res) => {
     const client = new ApifyClient({ token: 'apify_api_5Bz3X77frYBWORCfDD1Xj2ghw8WpGW2tdhgs' });
     const input = {
       directUrls: [`https://www.instagram.com/${username}/`],
-      resultsLimit: 5,
+      resultsLimit: 6,
     };
 
-    // Call the Apify actor
     const run = await client.actor("apify/instagram-scraper").call(input);
     const { items } = await client.dataset(run.defaultDatasetId).listItems();
     
-    // Send the results back in the response
     res.json(items);
     console.log(items);
   } catch (error) {

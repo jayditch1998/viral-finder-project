@@ -13,9 +13,9 @@ const PORT = process.env.PORT || 3000;
 const viralContentRoutes = require('./routes/viralContentRoutes');
 
 // connect to mongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Your connencted to MongoDB'))
-  .catch((error) => console.log(error));
+// mongoose.connect(process.env.MONGO_URI)
+//   .then(() => console.log('Your connencted to MongoDB'))
+//   .catch((error) => console.log(error));
 
 app.get('/', (request, response) => {
   response.send('Viral Finder API');

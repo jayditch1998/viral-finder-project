@@ -1,11 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/pages/Login";
-import Register from "./components/pages/Register";
-// import Home from './components/Home';
-import Navbar from "./components/Navbar";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Dashboard from "./components/pages/Dashboard";
+import React, { useState } from "react";
+
+
 import {
   AppBar,
   Avatar,
@@ -27,7 +22,7 @@ function App() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const pages = ["Viral finder", "Users"];
+  const pages = ["Home", "Users"];
   const settings = ["Profile", "Logout"];
 
   const handleOpenNavMenu = (event) => {
@@ -151,7 +146,15 @@ function App() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ 
+                  my: 2, 
+                  color: 'white', 
+                  display: 'block',
+                  '&:hover': {
+                    backgroundColor: 'primary.dark',
+                    color: 'white',
+                  },
+                }}
               >
                 {page}
               </Button>
