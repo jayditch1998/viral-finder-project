@@ -36,7 +36,7 @@ const MediaDisplay = (props) => {
                   </Grid>
                   <Grid item xs={4}>
                     <Typography variant="body2" color="text.secondary">
-                      👍 {item?.likesCount}
+                      ♥ {item?.likesCount}
                     </Typography>
                   </Grid>
                   <Grid item xs={4}>
@@ -62,41 +62,6 @@ const MediaDisplay = (props) => {
 
         ))
       }
-
-      <Grid item xs={12} sm={3}>
-        <Card sx={{ maxWidth: 600, margin: "auto" }}>
-          <CardHeader
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
-          />
-          <CardMedia
-            component="img"
-            height="300"
-            controls
-            src="https://fastly.picsum.photos/id/397/536/354.jpg?hmac=8UQkZUmuPJ4LkdA-5RTxg-Uuv3L5J-eAssr2Sbed1Xc"
-            alt="Video 1"
-          />
-          <CardContent>
-            <Grid container spacing={2}>
-              <Grid item xs={4}>
-                <Typography variant="body2" color="text.secondary">
-                  👍 {12}
-                </Typography>
-              </Grid>
-              <Grid item xs={4}>
-                <Typography variant="body2" color="text.secondary">
-                  👁️ {2}
-                </Typography>
-              </Grid>
-              <Grid item xs={4}>
-                <Typography variant="body2" color="text.secondary">
-                  💬 {3}
-                </Typography>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
-      </Grid>
     </Grid>
   );
 };

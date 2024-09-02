@@ -29,6 +29,7 @@ const Search = () => {
         setSearching(true);
         console.log("Search query:", query);
       }
+      setData([]);
       const response = await axios.post(
         "http://localhost:4000/api/instagram/find-user",
         {
